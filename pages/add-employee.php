@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="<?php echo EMS_PLUGIN_URL ?>css/style.css" >
+
     <title>Add Employee</title>
 </head>
 
 <body>
 
 <div class="container">
-    <h2>Add Employee</h2>
 
+  <img src="<?php echo EMS_PLUGIN_URL ?>image/logo.jpg" style="width:100px;" />
+
+    <h2 class="sub-menu-head">Add Employee</h2>
     <form>
 
   <div class="form-group">

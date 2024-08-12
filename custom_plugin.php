@@ -11,7 +11,11 @@
  * Author URI:        https://sujoysen.com
  */
 
+//  To attach the php file
  define("EMS_PLUGIN_PATH", plugin_dir_path( __FILE__ ));
+
+//  To attach the image, cs, js file
+ define("EMS_PLUGIN_URL", plugin_dir_url( __FILE__ ));
 
 
 // Calling action hook to add menu 

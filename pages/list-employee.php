@@ -13,13 +13,18 @@
     <!-- Datatables cdn -->
      <link rel="stylesheet" href="//cdn.datatables.net/2.1.3/css/dataTables.dataTables.min.css">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?php echo EMS_PLUGIN_URL ?>css/style.css" >  
+
     <title>List Employee</title>
 </head>
 
 <body>
 
 <div class="container">
-<h2>List Employees</h2>
+  
+<img src="<?php echo EMS_PLUGIN_URL ?>image/logo.jpg" style="width:100px;" />  
+<h2 class="sub-menu-head">List Employees</h2>
 
 <table class="table table-hover" id="tbl-employee">
   <thead>
