@@ -11,6 +11,8 @@
  * Author URI:        https://sujoysen.com
  */
 
+ define("EMS_PLUGIN_PATH", plugin_dir_path( __FILE__ ));
+
 
 // Calling action hook to add menu 
 add_action("admin_menu", "cp_add_admin_menu");
@@ -30,13 +32,13 @@ add_submenu_page("employee-system", "List Employee", "List Employee", "manage_op
 
 // Menu handle callback
 function ems_crud_system() {
-    echo "<h2>Welcome to Add Employee</h2>";
+    include_once(EMS_PLUGIN_PATH."pages/add-employee.php");
 }
 
 
 // Submenu handle callback
 function ems_list_employee() {
-    echo "<h2>Welcome to List Employee</h2>";
+    include_once(EMS_PLUGIN_PATH."pages/list-employee.php");
 }
 
 
