@@ -10,39 +10,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <!-- Datatables cdn -->
+     <link rel="stylesheet" href="//cdn.datatables.net/2.1.3/css/dataTables.dataTables.min.css">
+
     <title>List Employee</title>
 </head>
 
 <body>
-<table class="table table-hover">
+
+<div class="container">
+<h2>List Employees</h2>
+
+<table class="table table-hover" id="tbl-employee">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone No.</th>
+      <th>Gender</th>
+      <th>Designation</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td>1</td>
+      <td>Sujoy Sen</td>
+      <td>sujoysen@gmail.com</td>
+      <td>9046158841</td>
+      <td>Male</td>
+      <td>Developer</td>
+      <td>
+        <button type="button" class="btn btn-warning">Show</button>
+        <button type="button" class="btn btn-info">Update</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
+</div>
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -58,6 +67,20 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     -->
+
+    <!-- Datatables script -->
+    <script src="//cdn.datatables.net/2.1.3/js/dataTables.min.js"></script>
+
+    <script>
+        
+        $(function(){
+            // List Employee Data Table
+            new DataTable('#tbl-employee');
+        })
+
+    </script>
+
+
 </body>
 
 </html>
