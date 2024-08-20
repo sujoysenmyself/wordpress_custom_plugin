@@ -45,13 +45,12 @@ function ems_list_employee() {
     include_once(EMS_PLUGIN_PATH."pages/list-employee.php");
 }
 
-// Hooks for create the table dynamically
+// Hook for creating the table on plugin activation
 register_activation_hook( __FILE__, "ems_create_table" );
 
 function ems_create_table() {
     global $wpdb;
 
-    // Corrected line: Use $table_name to properly construct the table name
     $table_name = $wpdb->prefix . 'ems_form_data';
 
     $sql = "
@@ -69,6 +68,19 @@ function ems_create_table() {
     include_once ABSPATH . "wp-admin/includes/upgrade.php";
 
     dbDelta($sql);
+}
+
+// Hook for dropping the table on plugin deactivation
+register_deactivation_hook(__FILE__, "ems_drop_table");
+
+function ems_drop_table() {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'ems_form_data';
+
+    $sql = "DROP TABLE IF EXISTS $table_name";
+
+    $wpdb->query($sql);
 }
 
 ?>
