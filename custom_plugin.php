@@ -45,5 +45,30 @@ function ems_list_employee() {
     include_once(EMS_PLUGIN_PATH."pages/list-employee.php");
 }
 
+// Hooks for create the table dynamically
+register_activation_hook( __FILE__, "ems_create_table" );
+
+function ems_create_table() {
+    global $wpdb;
+
+    // Corrected line: Use $table_name to properly construct the table name
+    $table_name = $wpdb->prefix . 'ems_form_data';
+
+    $sql = "
+    CREATE TABLE $table_name (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(120) DEFAULT NULL,
+        `email` varchar(80) DEFAULT NULL,
+        `phoneNo` varchar(50) DEFAULT NULL,
+        `gender` enum('male','female','other') DEFAULT NULL,
+        `designation` varchar(50) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ";
+
+    include_once ABSPATH . "wp-admin/includes/upgrade.php";
+
+    dbDelta($sql);
+}
 
 ?>
