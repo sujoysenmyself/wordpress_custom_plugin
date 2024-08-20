@@ -1,16 +1,3 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   
-    <title>List Employee</title>
-</head>
-
-<body>
-
 <div class="container">
   
 <img src="<?php echo EMS_PLUGIN_URL ?>image/logo.jpg" style="width:100px;" />  
@@ -47,6 +34,3 @@
 </div>
 
   
-</body>
-
-</html>
