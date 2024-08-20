@@ -83,4 +83,35 @@ function ems_drop_table() {
     $wpdb->query($sql);
 }
 
+// Hook to add CSS/JS to admin area
+add_action("admin_enqueue_scripts", "ems_add_plugin_assets");
+
+function ems_add_plugin_assets() {
+
+    // Enqueue Bootstrap CSS from CDN
+    wp_enqueue_style("ems-bootstrap-css", "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css", array(), "4.5.3", "all");
+    
+    // Enqueue custom CSS file
+    wp_enqueue_style("ems-custom-css", EMS_PLUGIN_URL . "css/style.css", array(), "1.0.0", "all");
+
+    // Enqueue DataTables CSS from CDN
+    wp_enqueue_style("ems-datatables-css", "//cdn.datatables.net/2.1.3/css/dataTables.dataTables.min.css", array(), "2.1.3", "all");
+
+    // Enqueue jQuery Slim from CDN
+    wp_enqueue_script("ems-jquery-slim", "https://code.jquery.com/jquery-3.5.1.slim.min.js", array(), "3.5.1", true);
+
+    // Enqueue Bootstrap Bundle JS from CDN (includes Popper.js)
+    wp_enqueue_script("ems-bootstrap-js", "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js", array("ems-jquery-slim"), "4.5.3", true);
+
+    // Enqueue DataTables JS from CDN
+    wp_enqueue_script("ems-datatables-js", "//cdn.datatables.net/2.1.3/js/dataTables.min.js", array("jquery"), "2.1.3", true);
+
+    // Enqueue custom JS file with jQuery dependency
+    wp_enqueue_script("ems-custom-js", EMS_PLUGIN_URL . "js/custom.js", array("jquery"), "1.0.0", true);
+}
+
+
+
+
+
 ?>
