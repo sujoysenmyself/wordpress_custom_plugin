@@ -45,22 +45,29 @@
     <h2 class="sub-menu-head">Add Employee</h2>
 
     <?php
-        if(!empty($message)){
-          if($status == 1){
-            ?>
-            <div class="alert alert-success">
-                <?php echo $message; ?>
-            </div>
-            <?php
-          }else{
-            ?>
-            <div class="alert alert-danger">
-                <?php echo $message; ?>
-            </div>
-            <?php
-          }
-        }
-    ?>
+    if(!empty($message)){
+      if($status == 1){
+        ?>
+        <div class="alert alert-success alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <?php echo $message; ?>
+        </div>
+        <?php
+      } else {
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <?php echo $message; ?>
+        </div>
+        <?php
+      }
+    }
+  ?>
+
 
     <form action="" method="post" id="ems-frm-add-employee">
 
