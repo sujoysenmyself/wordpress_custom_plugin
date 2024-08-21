@@ -106,6 +106,9 @@ function ems_add_plugin_assets() {
     // Enqueue DataTables JS from CDN
     wp_enqueue_script("ems-datatables-js", "//cdn.datatables.net/2.1.3/js/dataTables.min.js", array("jquery"), "2.1.3", true);
 
+    // Enqueue jQuery Validate JS from CDN
+    wp_enqueue_script("ems-jquery-validate", "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js", array("jquery"), "1.19.5", true);
+
     // Enqueue custom JS file with jQuery dependency
     wp_enqueue_script("ems-custom-js", EMS_PLUGIN_URL . "js/custom.js", array("jquery"), "1.0.0", true);
 }
